@@ -2,7 +2,53 @@ form .error {
     color: #ff0000;
 }
 
-.page-numbers.current {
-    font-size: 28px;
-    color:#ff0000;
+.guest_post_pagination {
+    margin-top: 35px;
+    text-align: center;
+    width: 100%;
+}
+.guest_post_pagination .column {
+    float: right;
+    width: 100%;
+}
+.column {
+    margin: 0 0 0 2%;
+    float: left;
+    min-height: 1px;
+    position: relative;
+}
+.guest_post_pagination ul {
+    float: right;
+    width: 100%;
+}
+.guest_post_pagination ul li {
+    display: inline-block;
+    float: none;
+    padding-bottom: 0;
+    margin: 0 5px;
+}
+
+.guest_post_pagination ul li a {
+    background-color: #d37aa1 !important;
+}
+
+.guest_post_pagination ul li a, .guest_post_pagination ul li span, .page-link a, .page-link>span {
+    background: none;
+    color: #FFF;
+    display: inline-block;
+    letter-spacing: .5px;
+    margin: 10px 0px 0 0;
+    padding: 0 10px;
+    position: relative;
+    text-transform: uppercase;
+    min-width: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+}
+
+.guest_post_pagination ul li span { color: #fff;}
+
+.guest_post_pagination ul li span, .post-page-numbers.current {
+    background-color: #000;
+    border-color: #000;
 }
