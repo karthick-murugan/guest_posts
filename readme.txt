@@ -25,3 +25,5 @@ Guest Post Submission Plugin
 9) Create another shortcode to show list of post which are in pending status for admin approval
 
 10) Pagination the post entries if more than 10 posts.
+
+11) Setup private GIT repository for this project and share.
