@@ -245,17 +245,20 @@
     //Filter for adding pagination for the draft posts
     function guest_posts_pagination($max_num_pages) {
 
-        $out = '<nav aria-label="Page navigation example">';
+        $out = '<div class="guest_post_pagination">';
+            $out .= '<div class="column one pager_wrapper">';
                     $big = 999999999;
                     $out .=  paginate_links( array(
                         'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
                         'format' => '?paged=%#%',
                         'current' => max( 1, get_query_var('paged') ),
                         'total' => $max_num_pages,
-                        'prev_text' => esc_html__("<-- Prev", "guest_posts"),
-                        'next_text' => esc_html__("Next -->", "guest_posts"),
+                        'type'  => 'list',
+                        'prev_text' => esc_html__("<", "guest_posts"),
+                        'next_text' => esc_html__(">", "guest_posts"),
                     ) );
-                $out .= '</nav>';
+            $out .= '</div>';
+        $out .= '</div>';
 
         return $out;
     }
