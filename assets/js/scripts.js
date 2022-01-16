@@ -8,60 +8,62 @@ jQuery(document).ready(function($) {
            guest_post_excerpt: "Please enter the excerpt content",
            guest_post_featured_image: "Please choose a featured image",
        },
-       submitHandler: function() {}
+       submitHandler: function() {
+
+            // Guest Post form sending data via ajax
+            var myGuestPostsForm = $('#guest-post-submit-form');
+            $(myGuestPostsForm).submit(function(e) {
+                
+                //Prevent normal form submission
+                e.preventDefault();
+
+                //Get the form data and store in a variable
+                var myGuestPostsFormData = new FormData(myGuestPostsForm[0]);
+
+                //Add our own action to the data via append 
+                //action is where we will be hooking our php function
+                myGuestPostsFormData.append('action', 'guest_post_form_submit');
+
+                //Prepare and send the call
+                $.ajax({
+                    type: "POST",
+                    data: myGuestPostsFormData,
+                    dataType: "json",
+                    url: ajaxurl,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    enctype: 'multipart/form-data',
+                    beforeSend: function() {
+                        $('.button_loading').show();
+                    },
+                    complete: function(data) {
+                        $('.button_loading').hide();
+                    },
+                    success: function(response) {
+                        // Empty the field values after form submit
+                        $('#guest-post-submit-form').each(function() {
+                            this.reset();
+                        });
+                        //Success Message
+                        $(".alert-success").css("display", "block");
+                        setTimeout(function() {
+                            $('.alert-success').fadeOut();
+                        }, 2000);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        //Error Message
+                        $(".alert-warning").css("display", "block");
+                        setTimeout(function() {
+                            $('.alert-warning').fadeOut();
+                        }, 2000);
+                    }
+                });
+
+            });
+       }
    });
 
-   // Guest Post form sending data via ajax
-   var myGuestPostsForm = $('#guest-post-submit-form');
-   $(myGuestPostsForm).submit(function(e) {
-       
-       //Prevent normal form submission
-       e.preventDefault();
-
-       //Get the form data and store in a variable
-       var myGuestPostsFormData = new FormData(myGuestPostsForm[0]);
-
-       //Add our own action to the data via append 
-       //action is where we will be hooking our php function
-       myGuestPostsFormData.append('action', 'guest_post_form_submit');
-
-       //Prepare and send the call
-       $.ajax({
-           type: "POST",
-           data: myGuestPostsFormData,
-           dataType: "json",
-           url: ajaxurl,
-           cache: false,
-           processData: false,
-           contentType: false,
-           enctype: 'multipart/form-data',
-           beforeSend: function() {
-               $('.button_loading').show();
-           },
-           complete: function(data) {
-               $('.button_loading').hide();
-           },
-           success: function(response) {
-              // Empty the field values after form submit
-               $('#guest-post-submit-form').each(function() {
-                  this.reset();
-               });
-               //Success Message
-               $(".alert-success").css("display", "block");
-               setTimeout(function() {
-                   $('.alert-success').fadeOut();
-               }, 2000);
-           },
-           error: function(jqXHR, textStatus, errorThrown) {
-               //Error Message
-               $(".alert-warning").css("display", "block");
-               setTimeout(function() {
-                   $('.alert-warning').fadeOut();
-               }, 2000);
-           }
-       });
-
-   });
 
    // Admin publish the post via ajax method
    $('.publish-post').on('click', function () {     
