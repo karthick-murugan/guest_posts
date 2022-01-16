@@ -72,6 +72,8 @@ if (! class_exists ( 'GUESTPOSTSPostType' )) {
 			);
 			
 			register_post_type ( 'guest_posts', $args );
+
+			// Registering the category taxonomy
 			
 			register_taxonomy ( "guest_posts_categories", array (
 					"guest_posts" 
@@ -84,6 +86,8 @@ if (! class_exists ( 'GUESTPOSTSPostType' )) {
 					'show_in_rest' => true,
 					"query_var" => true 
 			) );
+
+			// Registering the tags taxonomy
 
 			register_taxonomy ( 'guest_posts_tags', array (
 				'guest_posts' 

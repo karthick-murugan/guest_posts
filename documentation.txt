@@ -1,0 +1,88 @@
+Guest Post Submission Plugin Code Documentation.
+
+In each and every file, the functionalities are clearly added in the comments. Here comes the overall file explanation.
+
+1) guest_posts.php
+
+This is the main file for the plugin with the plugin name. This file has the init functions and calls the files for the following tasks and initializing hooks
+
+       a) Registering the shortcodes.
+       b) Registering the custom post types.
+       c) Loading the text domain for translations.
+       d) Setting the activation and deactivation hook.
+
+2) custom-post-type/register-post-types.php
+
+This file will call all the custom post types registation files separately that we can register in the plugin. Since we have only one custom post type, this file calls the guest-posts-type.php alone.
+    
+3) custom-post-type/guest-posts-type.php
+
+This is the file where the actual custom post type "guest_posts" is registered. Along with that the taxonomies category and tags are registered as well.
+
+4) shortcodes/register-shortcodes.php
+
+This file will initialize the shortcodes.php where all the shortcodes are written and utils.php where all the filters are written.
+
+This file also enqueues the CSS and JS files needed for the plugin.
+
+This file also initializes filter for adding the custom options to the tinymce editor.
+
+5) shortcodes/shortcodes.php
+
+This file contains the shortcode functions for our 2 shortcodes.Have you used filters hook for both the shortcodes.
+
+   a) [guest_posts_form]
+   b) [pending_post_list post_type="guest_posts"]
+
+6) shortcodes/utils.php 
+
+This is the main file which contains the functions for the following tasks.
+
+    a) Ajax call back function for post creation in frontend
+    b) Ajax call back function for publish the post by admin.
+    c) Filter for getting all post types
+    d) Filter for loading the frontend editor
+    e) Filter for displaying the post creation form
+    f) Filter for listing the pending posts
+    g) Filter for adding pagination for the draft posts
+    i) Filter for Warning messages
+    j) Filter for Info messages
+
+7) shortcodes/tinymce/plugin-wp.js
+
+   This file Adds a custom icon button to the tinymce editor and our 2 custom shortcodes for the plugin.
+
+8) shortcodes/tinymce/css/styles.css
+  
+   Contains only the css code to call the icon image in the tinymce editor.
+
+9) shortcodes/tinymce/images/
+ 
+   Included our custom icon image in this folder.
+
+10) assets/css/
+
+   This folder contains the bootstrap min css file and our plugin css file.
+
+11) assets/js/scripts.js
+
+This file contains the 
+
+    a) Form validation using jQuery Validation Plugin
+    b) Guest Post form ajax function
+    c) Admin publish the post ajax function
+
+12) assets/js/jquery.validate.min.js
+
+jQuery validation plugin included for validation.
+
+13) languages/guest-posts.pot
+
+This file contains the translable strings if the plugin is used in multilingual site or a site other than English.
+
+14) readme.txt
+
+Which explains the functionality and Visual Demo of the Guest Post Plugin
+
+
+

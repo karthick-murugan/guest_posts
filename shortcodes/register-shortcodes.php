@@ -43,7 +43,6 @@ if (! class_exists ( 'GUESTPOSTSShortcodes' )) {
 			
 			// Js files enqueue
 			wp_enqueue_script('jquery-validation', plugin_dir_url( __FILE__) . '../assets/js/jquery.validate.min.js',array('jquery'),false,true );
-			wp_enqueue_script( 'bootstrap-js', plugin_dir_url( __FILE__) . '../assets/js/bootstrap.min.js',array(),false,true );
 			wp_enqueue_script( 'custom-scripts', plugin_dir_url( __FILE__) . '../assets/js/scripts.js');
 
 			//Ajaxurl used for creating the post using ajax method
@@ -56,7 +55,6 @@ if (! class_exists ( 'GUESTPOSTSShortcodes' )) {
 			}
 
 			if( is_admin() ) { 
-
 				
 				if ("true" === get_user_option ( 'rich_editing' )) {
 					//Initialize tinymice filter for adding custom icons
@@ -78,13 +76,8 @@ if (! class_exists ( 'GUESTPOSTSShortcodes' )) {
 		 */
 		function guest_posts_admin_init() {
 
-			// css
-			wp_enqueue_style ( 'GUESTPostPlugin-sc-dialog', GUESTPOSTS_TINYMCE_URL . '/css/styles.css', false, '1.0', 'all' );
-
-			wp_localize_script ( 'jquery', 'GUESTPostPlugin', array (
-					'plugin_folder' => WP_PLUGIN_URL . '/guest-posts',
-					'tinymce_folder' => GUESTPOSTS_TINYMCE_URL
-			) );
+			// tinymcs css
+			wp_enqueue_style ( 'GUESTPostPlugin-tinymce-style', GUESTPOSTS_TINYMCE_URL . '/css/styles.css', false, '1.0', 'all' );
 		}
 
 		/**

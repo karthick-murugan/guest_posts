@@ -20,19 +20,6 @@ class GUESTPOSTSShortcodesDefination
     }
 
     /**
-     *
-     * @param string $content
-     * @return string
-     */
-    function GuestPostsShortcodeHelper($content = null)
-    {
-        $content = do_shortcode(shortcode_unautop($content));
-        $content = preg_replace('#^<\/p>|^<br \/>|<p>$#', '', $content);
-        $content = preg_replace('#<br \/>#', '', $content);
-        return trim($content);
-    }
-
-    /**
      * Shortcode : Guest Post Form 
      * @param array $attrs
      * @param string $content

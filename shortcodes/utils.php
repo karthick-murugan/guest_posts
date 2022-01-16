@@ -124,7 +124,7 @@
             'wpautop' => true, // use wpautop
             'media_buttons' => true, // show insert/upload button(s)
             'textarea_name' => $editor_id, // set the textarea name
-            'textarea_rows' => get_option('default_post_edit_rows', 1) ,
+            'textarea_rows' => get_option('default_post_edit_rows', 10) ,
             'tinymce' => true, // load TinyMCE 
         );
 

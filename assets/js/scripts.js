@@ -78,6 +78,7 @@ jQuery(document).ready(function($) {
                post_id: post_id,
             }, 
             beforeSend: function() {
+                // Added post id here to append the spinner to the particular record.
                $('#publish-post-'+post_id).append('<div class="spinner-grow spinner-grow-sm"></div>');
             },
             complete: function(data) {

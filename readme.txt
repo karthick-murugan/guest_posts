@@ -10,7 +10,7 @@ http://recordit.co/FFIw6eoBi9
 
 2) Create custom post "Guest Posts".
 
-3) Post Creation form in frontend using shortcode.
+3) Post Creation form in frontend using shortcode. The shortcode to create Post Creation form is [guest_posts_form] Please have a look at this screenshot https://prnt.sc/26edfdc for the dropdown option in the editor.
 
 4) Form should be visible only to logged in authors.
 
@@ -28,7 +28,7 @@ http://recordit.co/FFIw6eoBi9
 
 8) Admin publishes the post.
 
-9) Create another shortcode to show list of post which are in pending status for admin approval
+9) Create another shortcode to show list of post which are in pending status for admin approval. The shortcode to list the post for admin approval is [pending_post_list post_type="guest_posts"]. You can pass post_type value of different custom post type and can list the draft items of that particular custom post type. Please have a look at this screenshot https://prnt.sc/26edgdx for the dropdown option in the editor.
 
 10) Paginate the post entries if more than 10 posts.
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DesignThemes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 19:12+0530\n"
+"POT-Creation-Date: 2022-01-16 21:32+0530\n"
 "PO-Revision-Date: 2019-07-03 12:46+0530\n"
 "Last-Translator: Admin <admin@iamdesigning.com>\n"
 "Language-Team: DesignThemes <support@designthemes.com>\n"
@@ -66,19 +66,19 @@ msgstr ""
 msgid "Parent Guest Post:"
 msgstr ""
 
-#: ../custom-post-types/guest-posts-type.php:80
+#: ../custom-post-types/guest-posts-type.php:82
 msgid "Categories"
 msgstr ""
 
-#: ../custom-post-types/guest-posts-type.php:81
+#: ../custom-post-types/guest-posts-type.php:83
 msgid "Category"
 msgstr ""
 
-#: ../custom-post-types/guest-posts-type.php:91
+#: ../custom-post-types/guest-posts-type.php:95
 msgid "Tags"
 msgstr ""
 
-#: ../custom-post-types/guest-posts-type.php:92
+#: ../custom-post-types/guest-posts-type.php:96
 msgid "Tag"
 msgstr ""
 
@@ -150,30 +150,30 @@ msgstr ""
 msgid "No draft items found right now..."
 msgstr ""
 
-#: ../shortcodes/utils.php:255
-msgid "<-- Prev"
+#: ../shortcodes/utils.php:257
+msgid "<"
 msgstr ""
 
-#: ../shortcodes/utils.php:256
-msgid "Next -->"
+#: ../shortcodes/utils.php:258
+msgid ">"
 msgstr ""
 
-#: ../shortcodes/utils.php:270
+#: ../shortcodes/utils.php:273
 msgid "Only logged in Authors can submit the post. Please login by "
 msgstr ""
 
-#: ../shortcodes/utils.php:271 ../shortcodes/utils.php:275
+#: ../shortcodes/utils.php:274 ../shortcodes/utils.php:278
 msgid "Clicking Here"
 msgstr ""
 
-#: ../shortcodes/utils.php:274
+#: ../shortcodes/utils.php:277
 msgid "Only Administrators can view and publish the post. Please login by "
 msgstr ""
 
-#: ../shortcodes/utils.php:286
+#: ../shortcodes/utils.php:289
 msgid "Post has been Submitted. Please wait for admin approval"
 msgstr ""
 
-#: ../shortcodes/utils.php:289
+#: ../shortcodes/utils.php:292
 msgid "Sorry, cannot submit your post. Please try again later"
 msgstr ""
